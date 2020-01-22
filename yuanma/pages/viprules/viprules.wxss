@@ -1,0 +1,21 @@
+/* pages/viprules/viprules.wxss */
+@import "../../utils/wxParse/wxParse.wxss";
+.detailed{
+    width: 90%;
+    margin: 0 auto;
+}
+.detailed img{
+    width: 100%;
+    margin: 0 auto;
+}
+.title{
+    display: block;
+    text-align: center;
+    font-size: 45rpx;
+    margin: 20rpx 0;
+}
+.wxParse-p .wxParse-span .wxParse-img{
+    width:95%! important;
+    display: block! important;
+    margin: 0 auto! important;
+}

@@ -1,0 +1,27 @@
+<!-- 会员活动列表 -->
+<view class="mian">
+    <view class="memberActivity" wx:for="{{activity_list}}" wx:key="{{activity_list}}"  id="activity_detail" bindtap="activityDetail" data-activityid="{{item.id}}">
+        <view class="member" > 
+            <image src="{{item.thumb}}" class="mainPicture"></image>
+            <view class="title">{{item.title}}</view>
+            <view class="center">
+                <view class="right">{{item.activity_begin_time}}</view>
+                <view class="left">{{item.shop_name}}</view>
+            </view>
+            <view class="bottom">
+                <image src="../../img/membervip.png" class="membervip"></image>
+                <view class="card-garde" style="padding-left:5rpx;" wx:for="{{item.user_rank}}" wx:key="user_rank" wx:for-item="itemName">
+                    <image src="../../img/yin.png" wx:if="{{itemName == '000'}}"></image>
+                    <image src="../../img/jin.png" wx:if="{{itemName == '001'}}"></image>
+                    <image src="../../img/bojin.png" wx:if="{{itemName == '002'}}"></image>
+                    <image src="../../img/zuan.png" wx:if="{{itemName == '003'}}"></image>
+                </view>
+                <image src="../../img/baoming.png" class="baoming"></image>
+            </view>
+        </view>
+    </view>
+    <view style="text-align: center;" hidden="{{!searchLoading}}">
+                    <image src="https://frun.ruyigou.com/web/statics/wxapp/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+                <view class="all" hidden="{{!all}}">已经全部加载完毕</view>
+</view>

@@ -1,0 +1,193 @@
+<navigator wx:if="{{shopNameLocation != ''}}" url='../store/store' class='navigate' hover-class="none">
+	<view>
+		<image src='../../img/position.png' class='navigation'></image>
+	</view>
+	<view>{{shopNameLocation}}</view>
+	<view>
+		<image src='../../img/arrow.png' class='navigation'></image>
+	</view>
+</navigator>
+<navigator wx:else url='../store/store' class='navigate' hover-class="none">
+	<view>
+		<image src='../../img/position.png' class='navigation'></image>
+	</view>
+	<view>请选择门店</view>
+	<view>
+		<image src='../../img/arrow.png' class='navigation'></image>
+	</view>
+</navigator>
+
+
+<!-- 首页卡面信息 -->
+
+<view class='page_hd' wx:if="{{hasCard == '2'}}">
+	<image src='{{picture}}' class='yin'></image>
+	<view class='yemian' style="color:#222222">
+		<view>{{grade}}</view>
+		<view wx:if="{{cardNum}}">NO.{{cardNum}}</view>
+	</view>
+	<!-- 弹窗 -->
+	<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+	<view class="maskimg" wx:if="{{showModal}}">
+		<image src="{{zximg}}" class="zximg" bindtap="GoGift" />
+		<image src="../../img/close.png" bindtap="Close" class="Closebutton" />
+	</view>
+
+</view>
+<view class='page_hd' wx:elif="{{hasCard == '1'}}">
+	<view class="weui-footer__link" hover-class="none" bindtap='openCard' id="opencard_enter">
+		<image src='http://wxapp.ruyigou.com/static/admin/yinka.png' class='on'></image>
+		<view class='open'>立即开通会员卡</view>
+	</view>
+</view>
+<view class='page_hd' wx:else>
+	<navigator url="../authorize/index" class="weui-footer__link" hover-class="none">
+		<view>
+			<image src="../../img/nologin.png" class="signIn" style="position:absolute; z-index:2; margin-top: 200rpx;"></image>
+			<image src='http://wxapp.ruyigou.com/static/admin/yinka.png' class='on'></image>
+
+
+		</view>
+
+
+	</navigator>
+</view>
+<!-- 积分优惠券展示页面 -->
+
+<view class="weui-flex" wx:if="{{hasCard == '2'}}">
+	<navigator id="jifenclick" class="weui-flex__item1" url="/pages/points/points" hover-class="none">
+		<view class="view-num">{{jiFen}}</view>
+		<view class="placeholder">积分</view>
+	</navigator>
+	<navigator id="barcodeclick" class="weui-flex__item1" url="/pages/barcode/barcode" hover-class="none">
+		<view class="view-num">
+			<image src='../../img/erwei.png' class='erwei'></image>
+		</view>
+		<view class="placeholder">会员码</view>
+	</navigator>
+	<navigator id="couponclick" class="weui-flex__item1" url="/pages/coupon/coupon" hover-class="none">
+		<view class="view-num">{{couponNum}}</view>
+		<view class="placeholder">优惠券</view>
+	</navigator>
+</view>
+<view class="weui-flex" wx:elif="{{hasCard == '1'}}">
+	<navigator id="jifenclick" class="weui-flex__item1" url="/pages/open/open" hover-class="none">
+		<view class="view-num">--</view>
+		<view class="placeholder">积分</view>
+	</navigator>
+	<navigator id="barcodeclick" class="weui-flex__item1" url="/pages/open/open" hover-class="none">
+		<view class="view-num">
+			<image src='../../img/erwei.png' class='erwei'></image>
+		</view>
+		<view class="placeholder">会员码</view>
+	</navigator>
+	<navigator id="couponclick" class="weui-flex__item1" url="/pages/coupon/coupon" hover-class="none">
+		<view class="view-num">{{couponNum ? couponNum : 0}}</view>
+		<view class="placeholder">优惠券</view>
+	</navigator>
+</view>
+<view class="weui-flex" wx:else>
+	<navigator id="jifenclick" class="weui-flex__item1" url="/pages/authorize/index" hover-class="none">
+		<view class="view-num">--</view>
+		<view class="placeholder">积分</view>
+	</navigator>
+	<navigator id="barcodeclick" class="weui-flex__item1" url="/pages/authorize/index" hover-class="none">
+		<view class="view-num">
+			<image src='../../img/erwei.png' class='erwei'></image>
+		</view>
+		<view class="placeholder">会员码</view>
+	</navigator>
+	<navigator id="couponclick" class="weui-flex__item1" url="/pages/authorize/index" hover-class="none">
+		<view class="view-num">--</view>
+		<view class="placeholder">优惠券</view>
+	</navigator>
+</view>
+<!-- 轮播图页面 -->
+<view class='page__bd'>
+
+	<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true" style="height:320rpx;">
+		<block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+			<view wx:if="{{item.appid != 1}}" bindtap="classtype" data-appid="{{item.appid}}" data-url="{{item.ad_link}}" data-adparame="{{item.ad_parame}}" data-id="shouyetype{{item.id}}">
+				<swiper-item>
+					<image src="{{item.ad_image}}" class="slide-image" width="355" height="160" />
+				</swiper-item>
+			</view>
+			<view wx:else bindtap="classtype" data-url="{{item.ad_link}}" data-appid="{{item.appid}}" data-id="shouyetype{{item.id}}" data-adparame="{{item.ad_parame}}">
+				<swiper-item>
+					<image src="{{item.ad_image}}" class="slide-image" />
+				</swiper-item>
+			</view>
+		</block>
+
+	</swiper>
+</view>
+<view class='controls'>
+	<navigator wx:if="{{zxCoupon != ''}}" url='../gift/gift' style="position: fixed;top: 800rpx;right: 0;">
+		<image src='{{zxCoupon}}' style="width: {{imagewidth}}px; height: {{imageheight}}px; margin-left:{{left}};" class='vip' hover-class="none" mode="widthFix"></image>
+	</navigator>
+
+
+</view>
+<view class="weui-flex">
+	<view class="mini" wx:for="{{classify}}" wx:key="{{classify}}">
+		<view wx:if="{{item.appid != 1}}" bindtap="classtype" data-appid="{{item.appid}}" data-url="{{item.ad_link}}" data-id="shouyetype{{item.id}}" data-adparame="{{item.ad_parame}}">
+			<navigator hover-class="none">
+				<image src="{{item.ad_image}}"></image>
+			</navigator>
+		</view>
+		<view wx:else bindtap="classtype" data-url="{{item.ad_link}}" data-appid="{{item.appid}}" data-id="shouyetype{{item.id}}" data-adparame="{{item.ad_parame}}">
+			<navigator hover-class="none">
+				<image src="{{item.ad_image}}"></image>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<!-- 电子海报 -->
+<view >
+	<image wx:for="{{posterimgUrls}}" wx:key="key" bindtap="goPoster" class="entrance" src="{{item}}"></image>
+</view>
+
+
+<!-- 优惠券页面 -->
+<view class="couponList" wx:if="{{couponLists != ''}}">
+	<view class="discount">
+		<view class="ticket">优惠券</view>
+		<view bindtap="goToCoupon" class="more" id="coupon_more">
+			<view class="find">更多</view>
+			<image src="../../img/btn_more.png" class="btnmore"></image>
+		</view>
+	</view>
+	<view class="shopCoupon">
+		<view class="double" wx:for="{{couponLists}}" wx:key="{{couponLists}}" id="shouye_couponlist_detail" bindtap="couponListDetail" data-couponid="{{item.id}}">
+			<image src="{{item.image}}" class="single"></image>
+			<view class="title">{{item.title}}</view>
+			<view class="shopname">{{item.shop_name}}</view>
+		</view>
+	</view>
+
+</view>
+
+
+<!-- 会员活动 -->
+<view class="activityList" wx:if="{{activityLists != ''}}">
+	<view class="discount">
+		<view class="ticket">会员活动</view>
+		<view bindtap="goToActivity" id="activity_more" class="more">
+			<view class="find">更多</view>
+			<image src="../../img/btn_more.png" class="btnmore"></image>
+		</view>
+	</view>
+	<view class="shopActivity">
+		<view class="member" wx:for="{{activityLists}}" wx:key="{{activityLists}}" id="shouye_activity_detail" bindtap="activityDetail" data-activityid="{{item.id}}">
+			<image src="{{item.thumb}}" class="mainPicture"></image>
+			<view class="heading">{{item.title}}</view>
+			<view class="center">
+				<view class="begintime">{{item.activity_begin_time}}</view>
+				<view class="marketname">{{item.shop_name}}</view>
+			</view>
+		</view>
+
+	</view>
+
+</view>

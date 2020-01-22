@@ -1,0 +1,41 @@
+<!-- 确认信息页 -->
+<view class="whole">
+    <view class="header">
+        <view class="title">{{title}}</view>
+    </view>
+    <view class="main">
+        <view class="information">
+            <image src="../../img/xiangqing.png" class="active"></image>
+            <view class="enroll">报名信息</view>
+        </view>
+          <view class="content">
+            <view class="left">
+                <view class="name">姓名</view>
+                <view class="mobile">手机号</view>
+            </view>
+               <view class="mainright">
+                <input class="news" value="{{message.realname}}" placeholder="请输入姓名" bindinput="getName"></input>
+                <input class="news" value="{{message.mobile}}" placeholder="请输入手机号" bindinput="getPhone" maxlength="11" ></input>
+            </view>
+        </view>
+    </view>
+    <view class="foot">请确认手机号填写正确,手机号是参与活动进行信息核对的唯一凭证,且报名后不可取消</view>
+    <view class="root">
+        <view class="points" wx:if="{{message.consume_jf === '0'}}">免费</view>
+        <view class="points" wx:if="{{message.consume_jf !== '0'}}">{{message.consume_jf}}积分</view>
+        <view class="sign" bindtap="submit" id="comfirm_application">确认报名</view>
+    </view>
+    <!-- 报名成功 -->
+    <view class="mask" wx:if="{{showModal}}"></view>
+
+    <view class="modalDlg" wx:if="{{showModal}}">
+       <image src="../../img/success.png" class="success" />
+        <view class="ok">报名成功!</view>
+        <view class="tips">参加活动时请出示入场券或您报名时填写的手机号</view>
+        <view class="admission">
+            <view class="close" bindtap="close" data-orderid="{{orderid}}" id="shut">关闭</view>
+            <view class="ticket" bindtap="goToMyactive" id="go_to_myactive"> 查看入场券</view>
+        </view>
+    </view>
+</view>
+

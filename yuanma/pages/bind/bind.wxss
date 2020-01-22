@@ -1,0 +1,50 @@
+/* pages/bind/bind.wxss */
+
+.information {
+    margin-top: 20px;
+    margin-right: 5%;
+    margin-left: 5%;
+    /* text-align: center; */
+}
+
+.weui-cells__title {
+    margin-top: 25px;
+}
+
+.tishi {
+    text-align: center;
+    height: 50rpx;
+    margin-top: 40rpx;
+}
+
+.ti {
+    display: table;
+    width: 100%;
+    line-height: 50rpx;
+    white-space: nowrap;
+    border-spacing: 2rem 0;
+    font-size: 30rpx;
+    color: gray;
+}
+
+.ti::before, .ti::after {
+    display: table-cell;
+    content: "";
+    width: 50%;
+    background: linear-gradient(gray, gray) repeat-x center;
+    background-size: 0.1rem 0.1rem;
+}
+
+.WViewColumn1 {
+    position: absolute;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.next {
+    margin-top: 20px;
+    width: 90%;
+}

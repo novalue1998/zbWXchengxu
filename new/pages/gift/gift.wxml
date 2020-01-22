@@ -1,0 +1,116 @@
+<swiper-item>
+    <scroll-view class="hot-box" scroll-top="{{scrollTop}}" style="height:100%;" scroll-y="true" bindscrolltolower="loadMore">
+        <view class="coupon-list">
+            <view  wx:for="{{zgCouponList}}" wx:key="{{zgCouponList}}"  class="list">
+                <view wx:if="{{item.type_id == 6 || item.type_id == 7 || item.type_id == 8 }}">
+                    <view class="item stamp stamp01" wx:if="{{item.status == 1}}">
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view bindtap='giftDetails' data-couponid="{{item.id}}" data-zid="{{item.zid}}">
+                                    <view class="t t2">{{item.title}}</view>
+                                    <view class="t t3">{{item.shop_type_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <navigator url="/pages/app/app"  hover-class="none" class="t5">
+                                    <text>仅限App领取</text>
+                                </navigator>
+                            </view>
+                        </view>
+                    </view>
+        
+                    <view class="item stamp stamp01" wx:else>
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view bindtap='giftDetails' data-couponid="{{item.id}}" data-zid="{{item.zid}}">
+                                    <view class="t t2">{{item.title}}</view>
+                                    <view class="t t3">{{item.shop_type_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                 
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <navigator url="/pages/coupon/coupon" hover-class="none"  class="t4">
+                                    <text>去查看</text>
+                                </navigator>
+                            </view>
+                        </view>   <view data-couponid="{{item}}" data-index="{{index}}" class="message" bindtap='selectTap'>
+                    <text class="leftMessage">使用说明</text>
+                    <view class="right ">
+                     <image class="select_img {{selectedFlag[index]?'select_img_rotate':'show'}}" src="../../img/arrow.png" ></image>
+                     </view>
+            </view>
+              <view data-couponid="{{item}}" class="xiangqing" hidden="{{!selectedFlag[index]}}">
+                    <text class="left">{{item.coupon_intro}}</text>
+                    <view class="right "></view>
+            </view>
+                    </view>
+                </view>
+                <view wx:else>
+                    <view class="item stamp stamp01" wx:if="{{item.status == 1}}">
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view bindtap='giftDetails' data-couponid="{{item.id}}">
+                                    <view class="t t2">{{item.title}}</view>
+                                    <view class="t t3">{{item.shop_type_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <view class="t3" bindtap="receive" data-couponid="{{item.id}}" data-zid="{{item.zid}}">
+                                    <text>立即领取</text>
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+                    <view class="item stamp stamp01" wx:else>
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view bindtap='giftDetails' data-couponid="{{item.id}}" data-zid="{{item.zid}}">
+                                    <view class="t t2">{{item.title}}</view>
+                                    <view class="t t3">{{item.shop_type_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <navigator url="/pages/coupon/coupon" hover-class="none"  class="t4" >
+                                    <text>去查看</text>
+                                </navigator>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                    <view data-couponid="{{item}}" data-index="{{index}}" class="message" bindtap='selectTap'>
+                    <text class="leftMessage">使用说明</text>
+                    <view class="right ">
+                     <image class="select_img {{selectedFlag[index]?'select_img_rotate':'show'}}" src="../../img/arrow.png" ></image>
+                     </view>
+            </view>
+              <view data-couponid="{{item}}" class="xiangqing" hidden="{{!selectedFlag[index]}}">
+                    <text class="left">{{item.coupon_intro}}</text>
+                    <view class="right "></view>
+            </view>
+            </view>
+           <view class="all" hidden="{{all}}">已经全部加载完毕</view>
+        </view>
+    </scroll-view>
+</swiper-item>

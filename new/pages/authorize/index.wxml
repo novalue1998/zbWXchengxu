@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="userinfo">
+        <image src='../../img/shouquan.jpg' class='image'></image>
+ 
+ <view>
+            <button bindtap="zbLogin" hover-class="btn-hover" class="sign" type='default'> 暂不登录 </button>
+            <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" type='primary' hover-class="btn-hover" class="just"> 立即登录 </button>
+      
+        <block wx:else="{{hasUserInfo && !canIUse}}">
+            <view class="ys-mask">
+                <!-- 遮罩层 -->
+                <view class="ys-dialog">
+                    <view class="ys-dialog-title">{{title}}</view>
+                    <view class="ys-dialog-content">{{content}}</view>
+                    <view class="ys-dialog-bottom">
+                        <button class="ys-dialog-btn ys-dialog-ok-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hover-class="btn-hover">{{okText}}</button>
+                    </view>
+                </view>
+            </view>
+        </block>
+         </view>
+    </view>
+</view>

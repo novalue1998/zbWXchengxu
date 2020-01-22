@@ -1,0 +1,52 @@
+page{background: #f5f5f5;}
+.whole{width: 100%;justify-content: center;display: flex;flex-direction: column;align-items: center;}
+.header{background: #ffffff;width: 95%;border-radius: 15rpx;}
+.title{margin: 30rpx 30rpx 30rpx 30rpx; color: #222222;}
+.active{height: 30rpx;width: 34rpx;margin-top:30rpx;}
+.main{background: #fdfdfd;width: 95%;border-radius: 15rpx; margin-top: 20rpx;}
+.information{display: flex;margin-left: 30rpx;border-bottom: 1rpx solid #eeeeee;line-height: 70rpx;}
+.enroll{margin-left: 16rpx;margin-top:10rpx;}
+input.news{border-bottom: 1rpx solid #eeeeee;color: #222222;height: 80rpx;}
+.content{display: flex;line-height: 85rpx;}
+.left{display:flex;flex-direction: column;margin-left: 30rpx;width: 20%;}
+.mainright{display: flex;flex-direction: column;margin-left: 36rpx;width: 77%;}
+.news{display: flex;align-items: center;}
+.foot{color: #999999;margin-top: 60rpx;width: 95%;font-size: 28rpx;}
+.root{display: flex;height: 100rpx;position: fixed;width: 100%;bottom: 0;z-index: 9999;}
+.points{width: 60%;background: #ffffff;display: flex;padding-left: 50rpx;font-size: 40rpx;color: #f23030;}
+.sign{width: 40%;background: #f23030;color: #ffffff;display: flex;justify-content: center;align-items: center;text-align: center;font-size: 40rpx;}
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9999;
+    opacity: 0.7;
+}
+
+.modalDlg {
+    height: 500rpx;
+    width: 80%;
+    position: fixed;
+    top: 230rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.success {
+    width: 260rpx;
+    margin-top: -100rpx;
+}
+.ok{margin-top: 15rpx;color: #f23030;font-size: 40rpx;}
+.tips{margin-left: 70rpx;margin-right: 70rpx;margin-top: 40rpx;color: #222222;font-size: 30rpx;}
+.admission{display: flex;border-radius: 20rpx;margin-top: 76rpx;width: 100%;}
+.close{width: 50%;background: #dbdbdb;color: #222222;height: 100rpx;justify-content: center;align-items: center;display: flex;}
+.ticket{width: 50%;background: #f23030;color: #ffffff;height: 100rpx;justify-content: center;align-items: center;display: flex;}

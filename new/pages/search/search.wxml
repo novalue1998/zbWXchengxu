@@ -1,0 +1,163 @@
+<page>
+    <!-- 搜索框 -->
+    <view class='page_row'>
+
+        <view class="df search_arr">
+
+            <icon class="searchcion" size='18' type='search'></icon>
+            <input class="main" focus="true" bindconfirm="getSearchValue" bindinput='bindinput' confirm-type="search" value="{{searchValue}}" />
+        </view>
+
+        <view url='../coupon/coupon' class='navigate' hover-class="none">
+            <view class='sousuo' bindtap="getSearch">搜索</view>
+            <!-- <image src="../../img/quanbao.png" class="screen"></image> -->
+        </view>
+    </view>
+    <!-- 搜索列表 -->
+    <scroll-view class="coupon-list" scroll-top='{{topNum}}'>
+        <view class='picture' hidden='{{display}}'>
+            <image src='../../img/cartk.png'></image>
+            <view class='nothing'>还没有相关的优惠券</view>
+        </view>
+        <view class="item stamp stamp01" wx:for="{{couponList}}" wx:key="{{couponList}}" hidden="{{hidden}}">
+            <!-- 左侧开始 -->
+            <view class="float-li t1" wx:if="{{item.user_rank.length !== 0}}" bindtap="couponListDetail" data-couponid="{{item.id}}">
+                <view class="coupon-left">
+                    <image src="../../img/zhuanx.png" class="t zhuanx"></image>
+                    <image src='{{item.image}}' class='t t1'></image>
+
+                    <view>
+                        <view class="t t2">{{item.title}}</view>
+
+                        <view wx:for="{{item.user_rank}}" wx:key="user_rank" wx:for-item="itemName" class="card-garde" style="padding-left:20rpx;">
+                            <image src="../../img/yin.png" wx:if="{{itemName == '000'}}" class="t yin"></image>
+                            <image src="../../img/jin.png" wx:if="{{itemName == '001'}}" class="t jin"></image>
+                            <image src="../../img/bojin.png" wx:if="{{itemName == '002'}}" class="t bojin"></image>
+                            <image src="../../img/zuan.png" wx:if="{{itemName == '003'}}" class="t zuan"></image>
+                        </view>
+                        <view class="t t4">{{item.shop_name}}</view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="float-li t1" wx:else bindtap="couponListDetail" data-couponid="{{item.id}}">
+                <view class="coupon-left">
+                    <image src='{{item.image}}' class='t t1'></image>
+
+                    <view>
+                       <view class="t one-title">{{item.title}}</view>
+                        <view class="t one-shop">{{item.shop_name}}</view>
+                    </view>
+                </view>
+            </view>
+            <!-- 左侧结束 -->
+            <!-- 右侧 -->
+            <view class="float-li-rig" wx:if="{{item.coupon_status == '0'}}">
+                <view class="coupon-rig">
+                    <view class="kaiqiang">距开抢还剩</view>
+
+                    <view class="gocoupon-two">
+                        <text class="hour">{{item.countDownh}}</text>
+                        <view style="color:red;padding:0rpx 5rpx;">:</view>
+                        <text class="min">{{item.countDownm}}</text>
+                        <view style="color:red;padding:0rpx 5rpx;">:</view>
+                        <text class="second">{{item.countDowns}}</text>
+                    </view>
+                </view>
+            </view>
+
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '1'}}">
+                <view class="coupon-rig">
+                    <view class="t1 t">已领取{{item.percentage}}%</view>
+                    <progress class="t2 t" percent="{{item.percentage}}" color="red" />
+                    <view class="t3 t" wx:if="{{item.consume_credit !== '0.00'}}">{{item.consume_credit}}积分</view>
+                    <view class="t4 t" bindtap="clickReceive" data-coupon_status="{{item.coupon_status}}">
+                        <text>立即领取</text>
+                    </view>
+                </view>
+            </view>
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '2'}}">
+                <view class="coupon-rig">
+                    <image src="../../img/end.png" class="end"></image>
+                </view>
+
+            </view>
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '3'}}">
+                <view class="coupon-rig">
+                    <image src="../../img/end.png" class="end"></image>
+                </view>
+            </view>
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '4'}}">
+                <view class="coupon-rig">
+                    <image src="../../img/green.png" class="green"></image>
+
+                    <view class="receive-two">已领取{{item.user_get_num}}张</view>
+                    <view class="gocoupon-end" bindtap="clickReceive" data-coupon_status="{{item.coupon_status}}">
+                        <text>去查看</text>
+                    </view>
+                </view>
+            </view>
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '5'}}">
+                <view class="coupon-rig">
+                    <view class="t1 t">已领取{{item.percentage}}%</view>
+                    <progress class="t2 t" percent="{{item.percentage}}" color="red" />
+                    <view class="t3 t" wx:if="{{item.consume_credit !== '0.00'}}">{{item.consume_credit}}积分</view>
+                    <view class="t4 t" wx:if="{{item.lingqutype == '1' || item.lingqutype == '3'}}">
+                        <text style="background-color: grey;">立即领取</text>
+                    </view>
+                    <view class="t4 t" wx:if="{{item.lingqutype == '2' || item.lingqutype == '4'}}" bindtap="clickReceive" data-coupon_status="{{item.coupon_status}}" data-consume_credit="{{item.consume_credit}}" data-couponid="{{item.id}}" data-zcid="{{item.zcid}}">
+                        <text>立即领取</text>
+                    </view>
+
+                </view>
+            </view>
+            <view class="float-li-rig" wx:elif="{{item.coupon_status == '6'}}">
+                <view class="coupon-rig">
+                    <image src="../../img/yellow.png" class="green"></image>
+
+                    <view class="receive">已领取{{item.user_get_num}}张</view>
+                    <view class="gocoupon" bindtap="clickReceive" data-coupon_status="{{item.coupon_status}}" data-consume_credit="{{item.consume_credit}}" data-couponid="{{item.id}}" data-zcid="{{item.zcid}}">
+                        <text>继续领取</text>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+        <view style="text-align: center;" hidden="{{!searchLoading}}">
+            <image src="https://frun.ruyigou.com/web/statics/wxapp/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+        </view>
+        <view class='tishi' hidden="{{!searchLoadingComplete}}">
+            <text class="loadingcomplete">我是有底线的</text>
+        </view>
+    </scroll-view>
+    <!-- 积分兑换页面 -->
+    <view class="mask" wx:if="{{showModal}}"></view>
+
+    <view class="modalDlg" wx:if="{{showModal}}" catchtouchmove="move">
+
+        <image src="../../img/popup_integralconvert_top.png" class="jifen" />
+        <view class="points">
+            <view class="surplus">剩余</view>
+            <view class="num">{{total_jifen}}</view>
+            <view class="surplus">积分</view>
+        </view>
+        <view class="points">
+            <view class="surplus">所需积分:</view>
+
+            <view class="number">{{consume_credit}}</view>
+        </view>
+        <view class="password">
+            <input type='number' bindtap="hideerror" password name="password" bindinput="getPassword" class="cardPassword" placeholder="请输入六位会员卡密码" maxlength='6' />
+        </view>
+        <text class="{{showNum?'isshow':'hide'}}" style="color:#f23030">密码须为6位</text>
+        <view class="error" hidden="{{error}}">{{errmsg}}</view>
+        <view class="convert">
+            <button wx:if="{{consume_credit <= total_jifen}}" style="background-color:red;" class="exchange" bindtap="exchange" hover-class="btn-hover">立即兑换</button>
+            <button wx:elif="{{consume_credit > total_jifen}}" style="background-color:grey; color:#fff;" class="none" disabled='true' hover-class="btn-hover">积分不足</button>
+            <navigator url="../resetting/resetting">
+                <view class="forget">忘记密码</view>
+            </navigator>
+        </view>
+        <image src="../../img/close.png" bindtap="Close" class="Closebutton" />
+    </view>
+</page>

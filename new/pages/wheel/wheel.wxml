@@ -1,0 +1,34 @@
+<!--pages/wheel/wheel.wxml-->
+<!-- 轮播海报 -->
+<view wx:if="{{showHavePoster}}">
+	<view>
+		<swiper class="swiperWidth" display-multiple-items="1" style='height:{{windowHeight*0.8}}px' class="wheel" previous-margin="30px" next-margin="30px" circular="true" bindchange="cardSwiper">
+			<swiper-item class="sitem" wx:for="{{swiperUrl}}" wx:key="key" data-index="{{index}}" class='{{index!==cardCurbi?"dengSwiper":"dengimage"}}'>
+				<image data-index="{{index}}" class='{{index!==cardCurbi?"deng":"showIndexImg"}}' bindtap="showBigImg" src='{{item.url}}'> </image>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 点击放大海报 -->
+
+	<view bindtap="showBigImg" wx:if="{{showPicture}}" class="bigImg">
+		<image src='{{showBigImgurl}}' style='height:{{windowHeight}}px'></image>
+	</view>
+	<!-- 放大提示 -->
+	<view class="enlarge">
+		<image src="../../img/showbigimg.png"></image>
+		<text>点击图片放大</text>
+	</view>
+	<!-- 当前张数 -->
+	<view wx:if="{{swiperUrl}}" class="currentIndex">{{cardCur+1}}/{{posterLength}}</view>
+	<!-- 分享按钮 -->
+	<view>
+		<image class="shareicon" src="../../img/shareicon.png"></image>
+		<button id="shareBtn" open-type="share" hover-class="other-button-hover" class="shareBut" src="../../img/shareposter.png">分享好友</button>
+	</view>
+</view>
+
+
+<view wx:if="{{!showHavePoster}}">
+	<image class="shownoposter" src="../../img/shownoposter.png"></image>
+	<text class="makePoster">小编正在快马加鞭制作海报...</text>
+</view>

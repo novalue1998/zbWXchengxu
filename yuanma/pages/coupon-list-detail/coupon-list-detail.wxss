@@ -1,0 +1,249 @@
+@import "../../css/coupon.wxss";
+page {
+    position: absolute;
+    width: 100%;
+}
+.controls {
+    position: relative;
+    height: 100rpx;
+    float: right;
+    overflow-x: hidden;
+}
+.dots{position: relative;top: 300rpx;z-index: 9999; overflow-x: hidden;}
+.vip {
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.lastDetail{
+    height: 100%;
+    overflow-x: hidden;
+}
+.quanText {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10rpx;
+}
+
+.wxParse-html .wxParse-head .wxParse-style .wxParse-inline {
+    display: none;
+}
+
+.wxParse-html .wxParse-body .wxParse-div .wxParse-div .wxParse-div .wxParse-p .wxParse-img {
+    width: 98% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: 15rpx !important;
+}
+
+.wxParse-html {
+    padding-bottom: 150rpx;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.on {
+    border-bottom: 2px solid red;
+    font-size: 40rpx;
+    color: red;
+}
+
+/* 优惠券列表样式 */
+
+.coupon-list {
+    display: block;
+    height: 320rpx;
+    margin: 0 auto;
+    padding-left: 20rpx;
+    background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
+}
+
+.coupon-list .item {
+    display: block;
+    width: 710rpx;
+    height: 270rpx;
+    margin-top: 25rpx;
+}
+
+.coupon-list .item .float-li-rig {
+    width: 230rpx;
+    height: 100%;
+    color: black;
+    float: right;
+    text-align: center;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+}
+
+.coupon-rig .gocoupon {
+    margin-top: 15rpx;
+}
+
+.coupon-rig .gocoupon-end {
+    margin-top: 15rpx;
+}
+
+.coupon-rig .gocoupon-two {
+    margin-top: 15rpx;
+}
+
+/* 文本样式 */
+
+.bodyStyle {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 50rpx;
+}
+
+/* 底部分享样式 */
+
+.share {
+    width: 100%;
+    height: 90rpx;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    padding: 10rpx;
+    border-top: 1px solid #eee;
+}
+
+.shareFriend {
+    height: 63rpx;
+    line-height: 37rpx;
+    margin-top: 19rpx;
+    background-color: orange;
+    color: white;
+    padding: 13rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    margin-left: 45%;
+    float: left;
+}
+
+.lingqu {
+    display: inline-block;
+    width: 18%;
+    height: 46rpx;
+    line-height: 42rpx;
+    margin-top: 19rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    color: white;
+    background-color: rgb(131, 131, 131);
+    padding: 10rpx;
+    text-align: center;
+    margin-left: 40rpx;
+    z-index: 999;
+}
+
+.canlingqu {
+    display: inline-block;
+    width: 18%;
+    height: 42rpx;
+    line-height: 45rpx;
+    margin-top: 20rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    color: white;
+    background-color: red;
+    padding: 10rpx;
+    text-align: center;
+    margin-left: 40rpx;
+    z-index: 999;
+}
+.canlingqu2 {
+    display: inline-block;
+    width: 18%;
+    height: 46rpx;
+    line-height: 45rpx;
+    margin-top: 20rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    color: white;
+    background-color: red;
+    padding: 10rpx;
+    text-align: center;
+    margin-left: 40rpx;
+    z-index: 999;
+}
+
+.lingwan {
+    display: inline-block;
+    width: 18%;
+    height: 45rpx;
+    line-height: 45rpx;
+    margin-top: 20rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    color: white;
+    background-color: rgb(131, 131, 131);
+    padding: 10rpx;
+    text-align: center;
+    margin-left: 40rpx;
+}
+
+.look {
+    display: inline-block;
+    width: 18%;
+    height: 45rpx;
+    margin-top: 19rpx;
+    border-radius: 15rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    color: #fff;
+    background-color:#88ba1f;
+    padding: 10rpx;
+    text-align: center;
+    margin-left: 40rpx;
+}
+.shuoming {
+    display: block;
+    border-bottom: 2px solid #f5f5f5;
+    font-size: 40rpx;
+    padding: 15rpx;
+}
+.shuoming text {
+    margin-left: 50rpx;
+}
+
+.shuoming2 {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #f5f5f5;
+    border-top: 15px solid #f5f5f5;
+    font-size: 40rpx;
+    padding: 15rpx;
+}
+
+.shuoming2 text {
+    margin-left: 50rpx;
+}
+
+element.style {
+    color: green;
+}
+
+.coupon-rig .gocoupon {
+    margin-top: 15rpx;
+}
+
+.wxParse-p .wxParse-inline {
+    width: 95%;
+    margin: 0 auto;
+    display: block;
+}
+
+.wxParse-p:last-child {
+    padding-bottom: 200rpx !important;
+}

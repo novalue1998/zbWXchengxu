@@ -1,0 +1,172 @@
+/* pages/points/points.wxss */
+
+.available-integral {
+    margin-top: 35rpx;
+    text-align: center;
+    font-size: 35rpx;
+    line-height: 70rpx;
+    letter-spacing: 8rpx;
+}
+
+.total {
+    font-size: 60rpx;
+    font-weight: 50rpx;
+    font-family: "黑体";
+}
+
+.lishi {
+    color: red;
+}
+
+.contentBox {
+    height: 100%;
+    width: 100%;
+}
+
+/* 例子的样式 */
+
+.day {
+    /* background-color: lightgray; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+button {
+    font-size: 35rpx;
+    color: green;
+    border: none;
+}
+
+.left {
+    width: 50rpx;
+    height: 50rpx;
+    display: flex;
+    margin-left: 20rpx;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.show {
+    display: block;
+}
+
+.right {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
+    display: flex;
+}
+
+button::after {
+    border-color: #38e600;
+}
+
+.layout_body {
+    padding: 30rpx;
+}
+
+.sdate {
+    color: #ccc;
+    display: flex;
+    flex-direction: column;
+    font-size: 30rpx;
+    margin-left: 35rpx;
+    margin-bottom: 30rpx;
+}
+
+/* 日期样式 */
+
+.layout_body .date_container {
+    /* background: red; *//* box-shadow: 0px 0px 10rpx #e9eaec; *//* border-radius: 8rpx; */
+    text-align: center;
+    position: relative;
+    height: 100rpx;
+    width: 200rpx;
+    line-height: 100rpx;
+    font-size: 45rpx;
+    /* font-weight: bold; */
+    overflow: hidden;
+}
+
+.layout_body .date_container .date_box2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+/* 滑动的动画 */
+
+.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+.fadeOutLeft {
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+.fadeOutRight {
+    -webkit-animation-name: fadeOutRight;
+    animation-name: fadeOutRight;
+}

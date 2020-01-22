@@ -1,0 +1,108 @@
+<!-- 会员报名互动详情页面 -->
+    <view class="content">
+    <import src="../../utils/wxParse/wxParse.wxml" />
+         <view class="sharePicture" bindtap="shareposter" id="shareposter" style="position: fixed;top: 100rpx;right: 0; z-index:9999;" data-id="{{activitydetail.id}}" hidden="{{showShare}}" data-shopname="{{activitydetail.shop_name}}" data-beginTime="{{activitydetail.activity_begin_times}}">
+            <image src="../../img/share.png" class="share"></image>
+        </view>
+        <view class="header">
+             <image src="{{activitydetail.thumb}}" class="mainPicture"></image>
+            <view class="title">{{activitydetail.title}}</view>
+            <view class="bottom">
+            <view class="isjifen">
+                <view wx:if="{{activitydetail.consume_jf == '0'}}" class="free">免费</view>
+                <view wx:if="{{activitydetail.consume_jf !== '0'}}" class="alignment">
+                    <view class="free">{{activitydetail.consume_jf}}</view>
+                    <view class="min">积分</view>
+                </view>
+            </view>
+            <view class="right">
+             <view class="vip">会员专享</view>
+                <view class="card-garde" style="padding-left:5rpx;" wx:for="{{activitydetail.user_rank}}" wx:key="user_rank" wx:for-item="itemName">
+               
+                    <image src="../../img/yin.png" wx:if="{{itemName == '000'}}"></image>
+                    <image src="../../img/jin.png" wx:if="{{itemName == '001'}}"></image>
+                    <image src="../../img/bojin.png" wx:if="{{itemName == '002'}}"></image>
+                    <image src="../../img/zuan.png" wx:if="{{itemName == '003'}}"></image>
+                </view>
+            </view>
+            </view>
+        </view>
+        <view class="main">
+            <view class="left">
+                <view class="leftson">活动名额</view>
+                <view class="typeface">{{activitydetail.user_num}}人</view>
+            </view>
+            <view class="left">
+               <view class="leftson">开始时间</view>
+                <view class="typeface">{{activitydetail.activity_begin_time}}</view>
+            </view>
+            <view class="left">
+                 <view class="leftson">结束时间</view>
+                 <view class="typeface">{{activitydetail.activity_end_time}}</view>
+            </view>
+            <view class="left">
+                  <view class="leftson">活动地点</view>
+                   <view class="typeface">{{activitydetail.address}}</view>
+            </view>
+            <view class="left">   
+                <view class="leftson">联系电话</view>            
+                <view class="typeface">{{activitydetail.phone}}
+                  <image src="../../img/btn-phone.png" class="phone2" bindtap='makePhoneCall'></image>
+            </view>
+            </view>
+        </view>
+        <view class="activity">
+            <view class="top">
+                <image src="../../img/xiangqing.png" class="xiangqing"></image>
+                <view class="active">活动详情</view>
+            </view>
+            <template class='body' is="wxParse" data="{{wxParseData:active. nodes}}" />
+        </view>
+        <!-- 底部 -->
+        <view class="status">
+            <navigator class="must" url="/pages/authorize/index" wx:if="{{activitydetail.user_activity_status == '1'}}" >立即报名</navigator>
+             <view class="must" id="enlist" bindtap="clickTicket" data-cust_type = "{{activitydetail.cust_type}}" data-activityid="{{activitydetail.id}}" data-title="{{activitydetail.title}}" data-user_activity_status="{{activitydetail.user_activity_status}}" wx:if="{{activitydetail.user_activity_status == '5' && activitydetail.lingqutype =='2'}}">立即报名</view>
+            <view class="must"   id="enlist" wx:if="{{activitydetail.user_activity_status == '5' && activitydetail.cust_type ==''}}" bindtap="clickTicket" data-activityid="{{activitydetail.id}}" data-title="{{activitydetail.title}}" data-user_activity_status="{{activitydetail.user_activity_status}}" data-cust_type = "{{activitydetail.cust_type}}">立即报名</view>
+            <view class="must" wx:if="{{activitydetail.user_activity_status == '2'}}" id="show_ticket" bindtap="showTicket" data-orderid="{{activitydetail.dataid}}">已报名/出示入场券</view>
+              <view class="must" wx:if="{{activitydetail.user_activity_status == '3'}}">感谢您的参与(已核销)</view>
+            <view class="loot" wx:if="{{activitydetail.user_activity_status == '6'}}">已抢光</view>
+            <view class="end" wx:if="{{activitydetail.user_activity_status == '7'}}">已结束</view>
+            <view class="discontent" wx:if="{{activitydetail.lingqutype == '1' && activitydetail.user_activity_status == '5'}}">当前级别不满足活动报名条件</view>
+            <view class="discontent" wx:if="{{activitydetail.cust_type == '4'}}">敬请期待</view>
+        </view>
+        <!-- 出示入场券 -->
+        <view class="mask" wx:if="{{showModal}}" catchtouchmove="true"></view>
+    <view class="modalDlg" wx:if="{{showModal}}" catchtouchmove="move">
+        <view class='shopname'>
+            <view class='typename'>{{entrance.shop_name}}</view>
+        </view>
+        <view class='heading'>{{entrance.title}}</view>
+        <view class='time'>使用期限: {{entrance.activity_begin_time}}至{{ entrance.activity_end_time}}</view>
+        <view class="barcode">
+            <canvas class='tiaoxing' canvas-id="barcode" />
+        </view>
+        <!-- 二维码部分 -->
+        <view class="qrcode" bindtap="tap">
+            <canvas class='erwei' canvas-id="qrcode" />
+        </view>
+        <view class='quanma'>券码:{{entrance.order_sn}}</view>
+        <view>
+            <view class='bt'>{{entrance.message}}</view>
+            <view bindtap="wirteoff" class="ok" id="wirteoff">店员核销</view>
+            <view class='off' bindtap='close'>
+                <image src='../../img/close.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <!-- 分享生成海报 -->
+     <view class="mask" wx:if="{{showPoster}}" bindtap="closeModel" catchtouchmove="true"></view>
+     <view class="modalDlg"wx:if="{{showPoster}}" catchtouchmove="true">
+    <image src="{{photo}}" class="modalDlg"> </image>
+       <view class="bbbb">
+            <button  class="btn" open-type="share"  id="activity_share" hover-class="other-button-hover"> 分享好友</button>
+            <button  class="keep" bindtap="preserve" id="save">保存图片</button>
+        </view> 
+    </view>
+</view>
+

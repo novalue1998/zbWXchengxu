@@ -1,0 +1,265 @@
+page {
+    background: #f5f5f5;
+}
+
+.select_box {
+    background: #fff;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    height: 100%;
+    line-height: 86rpx;
+    text-align: left;
+    position: relative;
+}
+
+.select {
+    width: 100%;
+    height: 86rpx;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.select_text {
+    padding: 0 10px;
+    color: rgb(102, 102, 102);
+    line-height: 86rpx;
+    height: 86rpx;
+    font-size: 18px;
+}
+
+.city {
+    text-align: center;
+    font-size: 17px;
+    color: rgb(102, 102, 102);
+}
+
+.location {
+    color: red;
+    font-size: 15px;
+    position: absolute;
+    float: right;
+    margin-left: 300rpx;
+}
+
+.select_img {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    transition: transform 0.3s;
+    padding: 0 10px;
+}
+
+.select_img_rotate {
+    transform: rotate(180deg);
+}
+
+.option_box {
+    position: absolute;
+    top: 86rpx;
+    width: 100%;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    height: 500rpx;
+    z-index: 1;
+    opacity: 1;
+    overflow-y: auto;
+    border-top: 0;
+    background: #fff;
+    transition: height 0.3s;
+}
+
+.option {
+    display: block;
+    line-height: 45rpx;
+    font-size: 35rpx;
+    border-bottom: 1px solid #efefef;
+    padding: 18rpx;
+    color: rgb(102, 102, 102);
+}
+
+.shadow {
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    z-index: 40;
+    top: 72rpx;
+}
+
+.store {
+    display: flex;
+    flex-direction: row;
+}
+
+.business {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.format {
+    background: -webkit-linear-gradient(right, rgb(254, 125, 62), rgb(255, 185, 35));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+    padding: 0 5rpx;
+
+
+}
+
+.market {
+    background: -webkit-linear-gradient(right, rgb(107, 209, 38), rgb(170, 230, 66));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+    padding: 0 5rpx;
+}
+
+.electrical {
+    padding: 0 5rpx;
+    background: -webkit-linear-gradient(right, rgb(68, 140, 220), rgb(114, 180, 250));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+
+}
+/* 电商 */
+.online{
+      padding: 0 5rpx;
+    background: -webkit-linear-gradient(right, rgb(242,48,48),rgb(254,123,123));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+}
+/* 文旅 */
+.bridage{
+     padding: 0 5rpx;
+    background: -webkit-linear-gradient(right, rgb(255,83,175),rgb(255,174,216));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+}
+/* 其他 */
+.other{
+      padding: 0 5rpx;
+    background: -webkit-linear-gradient(right, rgb(225,188,157),rgb(245,220,194));
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    border-radius: 3px;
+}
+/* 列表页 */
+
+.coupon-list {
+    position: absolute;
+    flex-direction: column;
+    /* display: flex; */
+    width: 100%;
+    height: 220rpx;
+    margin-top: 20rpx;
+}
+
+.coupon-list .item {
+    width: 100%;
+    height: 220rpx;
+}
+
+.coupon-list .item .float-li {
+    width: 69%;
+    float: left;
+    height: 100%;
+    border-right: 6rpx dashed rgba(255, 255, 255, 0.3);
+}
+
+.coupon-list .item .float-li-rig {
+    width: 225rpx;
+    height: 100%;
+    color: black;
+    float: right;
+}
+
+.coupon-left {
+    position: relative;
+}
+
+.coupon-left .t {
+    position: absolute;
+    color: #000;
+}
+
+.coupon-left .t1 {
+    position: relative;
+    font-weight: bold;
+    left: 20rpx;
+    top: 10rpx;
+    font-size: 35rpx;
+}
+
+.coupon-left .t2 {
+    left: 20rpx;
+    top: 90rpx;
+    width: 480rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mobile{
+    position: relative;
+    right: 67%;
+    top: 150rpx;
+    width: 350rpx;
+    color: #007cc3;
+    font-size: 28rpx;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.coupon-rig {
+    position: relative;
+    font-size: 30rpx;
+}
+
+.coupon-rig .t {
+    text-align: center;
+    color: black;
+}
+
+.navigate {
+    height: 80rpx;
+    width: 80rpx;
+    margin-left: 100rpx;
+}
+.smallphone{
+    width: 25rpx;
+    height: 25rpx;
+    margin-left: 10rpx;
+}
+.coupon-rig .t1 {
+    margin-top: 60rpx;
+    text-align: right;
+    margin-right: 10rpx;
+}
+
+.stamp {
+    width: 700rpx;
+    height: 250rpx;
+    margin-bottom: 30rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.stamp01 {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, black 30rpx);
+    background-size: 10rpx 10rpx;
+    background-position: 9rpx 3rpx;
+    background: #fff;
+}

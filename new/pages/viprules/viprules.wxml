@@ -1,0 +1,7 @@
+<!--pages/viprules/viprules.wxml-->
+ <import src="../../utils/wxParse/wxParse.wxml"/>
+<view class='detailed'>
+<text class="title">{{title}}</text>
+<template class='body' is="wxParse" data="{{wxParseData:article. nodes}}"/>
+</view>
+

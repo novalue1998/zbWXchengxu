@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/poster/poster",
+    "pages/wheel/wheel",
+    "pages/coupon-list/coupon-list",
+    "pages/resetting/resetting",
+    "pages/personal/personal",
+    "pages/barcode/barcode",
+    "pages/open/open",
+    "pages/points/points",
+    "pages/bind/bind",
+    "pages/coupon/coupon",
+    "pages/search/search",
+    "pages/coupon-list-detail/coupon-list-detail",
+    "pages/viprules/viprules",
+    "pages/authorize/index",
+    "pages/app/app",
+    "pages/store/store",
+    "pages/gift/gift",
+    "pages/memberbenefits/memberbenefits",
+    "pages/gift-detail/gift-detail",
+    "pages/myactive/myactive",
+    "pages/member-activity/member-activity",
+    "pages/activity-detail/activity-detail",
+    "pages/comfirm/comfirm"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx8ac23c8ea037afec",
+    "wx93b9dce6158c9f83",
+    "wx7bb06af1e28c548a",
+    "wx7aa12f364ded35c3"
+  ],
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.6",
+      "provider": "wx5bc2ac602a747594"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "tabBar": {
+    "selectedColor": "#ee3940",
+    "color": "#0b0306",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/selecthome.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/coupon-list/coupon-list",
+        "iconPath": "img/coupon.png",
+        "selectedIconPath": "img/select-coupon.png",
+        "text": "优惠券"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "img/me.png",
+        "selectedIconPath": "img/select-me.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

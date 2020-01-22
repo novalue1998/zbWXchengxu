@@ -1,0 +1,176 @@
+<page>
+
+    <view class="swiper-tab">
+        <block wx:for="{{swipertab}}" wx:key="sptab">
+            <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+        </block>
+    </view>
+    <swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-31}}px" bindchange="tabChange">
+        <!-- 未使用 -->
+        <swiper-item>
+            <scroll-view class="hot-box" scroll-top="{{scrollTop}}" style="height:100%;" scroll-y="true" bindscrolltolower="loadMore">
+                <view class='picture' hidden='{{display}}'>
+                    <image src='{{picture}}'></image>
+                    <view class='nothing'>还没有相关的优惠券</view>
+                </view>
+                <view class="coupon-list" wx:for="{{useCouponList}}" wx:key=" ">
+                    <view class="item stamp stamp01 ">
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view bindtap='couponDetails' data-couponid="{{item}}">
+                                    <view class="t t2">{{item.title}}</view>
+                                    <view class="t t3">{{item.shop_name}}{{item.type_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <view class="t3" bindtap="couponUse" data-useId="{{item}}">
+                                    <text>去使用</text>
+                                </view>
+                            </view>
+                        </view>
+                        <i></i>
+                    </view>
+                    <view data-couponid="{{item}}" data-index="{{index}}" class="message" bindtap='selectTap'>
+                        <text class="leftMessage">使用说明</text>
+                        <view class="right ">
+                            <image class="select_img {{selectedFlag[index]?'select_img_rotate':'show'}}" src="../../img/arrow.png"></image>
+                        </view>
+                    </view>
+                    <view data-couponid="{{item}}" class="xiangqing" hidden="{{!selectedFlag[index]}}">
+                        <text class="left">{{item.coupon_intro}}</text>
+                        <view class="right "></view>
+                    </view>
+                </view>
+                <view style="text-align: center;" hidden="{{!searchLoading}}">
+                    <image src="https://frun.ruyigou.com/web/statics/wxapp/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+                <view class="all" hidden="{{all}}">已经全部加载完毕</view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 已使用 -->
+        <swiper-item>
+            <scroll-view class="hot-box" scroll-top="{{scrollTop}}" style="height:100%;" scroll-y="true" bindscrolltolower="loadMore">
+                <view class='picture' hidden='{{display}}'>
+                    <image src='{{picture}}'></image>
+                    <view class='nothing'>还没有相关的优惠券</view>
+                </view>
+                <view class="coupon-list" wx:for="{{useCouponList}}" wx:key=" ">
+                    <view class="item stamp stamp01 ">
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view class="t t2">{{item.title}}</view>
+                                <view class="t t3">{{item.shop_name}}{{item.type_name}}</view>
+                            </view>
+                        </view>
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <view class="t3">
+                                    <image src='../../img/used.png' class='icon'></image>
+                                </view>
+                            </view>
+                        </view>
+                        <i></i>
+                    </view>
+                    <view data-couponid="{{item}}" data-index="{{index}}" class="message" bindtap='selectTap'>
+                        <text class="leftMessage">使用说明</text>
+                        <view class="right ">
+                            <image class="select_img {{selectedFlag[index]?'select_img_rotate':'show'}}" src="../../img/arrow.png"></image>
+                        </view>
+                    </view>
+                    <view data-couponid="{{item}}" class="xiangqing" hidden="{{!selectedFlag[index]}}">
+                        <text class="left">{{item.coupon_intro}}</text>
+                        <view class="right "></view>
+                    </view>
+                </view>
+                <view style="text-align: center;" hidden="{{!searchLoading}}">
+                    <image src="https://frun.ruyigou.com/web/statics/wxapp/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+                <view class="all" hidden="{{all}}">已经全部加载完毕</view>
+            </scroll-view>
+        </swiper-item>
+        <!-- 已失效 -->
+        <swiper-item>
+            <scroll-view class="hot-box" scroll-top="{{scrollTop}}" style="height:100%;" scroll-y="true" bindscrolltolower="loadMore">
+                <view class='picture' hidden='{{display}}'>
+                    <image src='{{picture}}'></image>
+                    <view class='nothing'>还没有相关的优惠券</view>
+                </view>
+                <view class="coupon-list" wx:for="{{useCouponList}}" wx:key=" ">
+                    <view class="item stamp stamp01 ">
+                        <!-- 左侧 -->
+                        <view class="float-li">
+                            <view class="coupon-left">
+                                <image src='{{item.image}}' class='t t1'></image>
+                                <view class="t t2">{{item.title}}</view>
+                                <view class="t t3">{{item.shop_name}}{{item.type_name}}</view>
+                            </view>
+                        </view>
+                        <!-- 右侧 -->
+                        <view class="float-li-rig">
+                            <view class="coupon-rig">
+                                <view class="t3">
+                                    <image src='../../img/expired.png' class='icon'></image>
+                                </view>
+                            </view>
+                        </view>
+                        <i></i>
+                    </view>
+                    <view data-couponid="{{item}}" data-index="{{index}}" class="message" bindtap='selectTap'>
+                        <text class="leftMessage">使用说明</text>
+                        <view class="right ">
+                            <image class="select_img {{selectedFlag[index]?'select_img_rotate':'show'}}" src="../../img/arrow.png"></image>
+                        </view>
+                    </view>
+                    <view data-couponid="{{item}}" class="xiangqing" hidden="{{!selectedFlag[index]}}">
+                        <text class="left">{{item.coupon_intro}}</text>
+                        <view class="right "></view>
+                    </view>
+                </view>
+                <view style="text-align: center;" hidden="{{!searchLoading}}">
+                    <image src="https://frun.ruyigou.com/web/statics/wxapp/images/loading.svg" style="width: 160rpx;height: 80rpx"></image>
+                </view>
+                <view class="all" hidden="{{all}}">已经全部加载完毕</view>
+            </scroll-view>
+        </swiper-item>
+
+    </swiper>
+    <!-- 点击去使用展示弹框 -->
+    <view class="mask" wx:if="{{showModal}}"></view>
+    <view class="modalDlg" wx:if="{{showModal}}" catchtouchmove="move">
+        <view class='shopname'>
+            <view class='typename'>{{hehe.shop_name}}{{hehe.type_name}}</view>
+        </view>
+        <view class='heading'>{{hehe.title}}</view>
+        <view class='time'>使用有效期: {{used_begin}} 至 {{used_end}}</view>
+        <view class="barcode">
+            <canvas class='tiaoxing' canvas-id="{{str_random}}" />
+        </view>
+        <!-- 二维码部分 -->
+        <view class="qrcode" bindtap="tap">
+            <canvas class='erwei' canvas-id="qrcode{{str_random}}" />
+        </view>
+        <view class='quanma'>券码:{{hehe.code}}</view>
+        <view wx:if="{{show}}">
+            <view class='bt'>使用时由店员点击下方按钮核销，顾客勿点</view>
+            <view bindtap="ok" class="ok">店员核销</view>
+            <view class='off' bindtap='close'>
+                <image src='../../img/close.png'></image>
+            </view>
+        </view>
+        <block wx:else>
+            <view class='bt'>结账时请向款员出示该券码进行核销</view>
+            <view class='close' bindtap='close'>
+                <image src='../../img/close.png'></image>
+            </view>
+        </block>
+    </view>
+
+</page>

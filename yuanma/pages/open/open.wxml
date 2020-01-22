@@ -1,0 +1,56 @@
+<form bindsubmit='formSubmit' wx:if="{{xianshi != 1}}" >
+    <view class='page' xmlns:wx="http://www.w3.org/1999/xhtml">
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">
+                        <text decode="{{true}}">姓&emsp;&emsp;&emsp;名</text>
+                    </view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" type='text' name='username' placeholder="请输入您的姓名" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input weui-cell_vcode">
+                <view class="weui-cell__hd">
+                 <view class="weui-label">
+                        <text decode="{{true}}" >手&emsp;机&emsp;号</text>
+                    </view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" maxlength='11' name='mobile' placeholder='输入开卡预留手机号' type='number' />
+                </view>
+
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label"> 身 份 证 号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  maxlength='18' name='idcard' placeholder="请输入您的身份证号" />
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">会员卡密码</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input password class="weui-input" type='number' name='password' maxlength='6' placeholder="请输入6位密码" />
+                </view>
+            </view>
+        </view>
+        <button type='primary' form-type="submit" id="open_card" class='kai' bindtap='openCard' hover-class="btn-hover">立即开通</button>
+        <button class='ka' bindtap='jumpBind' hover-class="btn-hover" id="bind_card_enter">已有北人集团会员实体卡</button>
+        <view class='tishi'>
+            <text class='ti'>温馨提示</text>
+        </view>
+        <view class="WViewColumn1" style="">
+            <view class="WViewRow1" style="">1. 在此开通的电子会员卡等同于北人集团实体会员卡所有权益、升降级规则遵照北人集团会员规则执行</view>
+            <view class="WViewRow2" style="">2. 开通之前，请您了解北人集团会员有关协议</view>
+            <view class="WViewRow3" style="">3. 开通电子会员之后，您可持相关证件，到北人集团旗下卖场申领实体会员卡</view>
+            <view class="WViewRow4" style="">4. 会员卡密码：用于线上线下消分、会员身份认证等，请妥善设置，并牢记</view>
+        </view>
+
+    </view>
+</form>

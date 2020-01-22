@@ -1,0 +1,61 @@
+
+<view class='select_box'>
+    <view class='select'>
+        <text class='select_text'>所选城市:</text>
+        <text class='city'>{{selectData[index].name}}</text>
+        <image class='select_img {{show&&"select_img_rotate"}}' src="../../img/arrow.png" catchtap='selectTap'></image>
+        <view class='location' bindtap="reLocation">重新定位</view>
+    </view>
+    <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*85):0}}rpx;'>
+        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='selectData' data-index='{{index}}' data-code='{{item.code}}' catchtap='optionTap'>{{item.name}}</text>
+    </view>
+</view>
+ 
+<swiper-item>
+   <view class="shadow" hidden="{{!openPicker}}"></view>
+    <scroll-view class="hot-box" scroll-top="{{scrollTop}}" style="height:100%;" scroll-y="true" bindscrolltoupper="topLoad" bindscrolltolower="loadMore">
+        <view class="coupon-list">
+            <view class="item stamp stamp01" wx:for="{{shopLists}}" wx:key="{{shopLists}}">
+                <view class="float-li" catchtap="goToShowYe" data-storesname="{{item.shop_name}}" 
+                        data-storeshopscode="{{item.shop_code}}" data-storeshopslist="{{item.json_shop_list}}"
+                        data-storecitycode="{{item.city_code}}">
+                    <view class="coupon-left">
+                        <view class='store'>
+                            <view class="t t1">{{item.shop_name}}</view>
+                            <view class='business'>
+                                <view wx:for="{{item.shop_list}}" wx:key="{{item.shop_list}}" style="padding-right: 10rpx;">
+                                    <view class='format' wx:if="{{item.yetai_id == '1'}}">{{item.yetai_name}}</view>
+                                    <view class='market' wx:if="{{item.yetai_id == '2'}}">{{item.yetai_name}}</view>
+                                    <view class='electrical' wx:if="{{item.yetai_id == '3'}}">{{item.yetai_name}}</view>
+                                    <view class='online' wx:if="{{item.yetai_id == '4'}}">{{item.yetai_name}}</view>
+                                    <view class='bridage' wx:if="{{item.yetai_id == '5'}}">{{item.yetai_name}}</view>
+                                    <view class='other' wx:if="{{item.yetai_id == '6'}}">{{item.yetai_name}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="t t2">{{item.shop_address}}</view>
+                      
+                    </view>
+                </view>
+                  <view class="mobile" bindtap='makePhoneCall' data-phone="{{item.shop_phone}}">{{item.shop_phone}}
+                        <image src='../../img/smallPhone.png' class='smallphone'></image>
+                        </view>
+                <view class="float-li-rig">
+                    <view class="coupon-rig">
+                        <view class="t1">
+                            <text wx:if="{{meters !== 'bucunzai'}}">距您{{item.distance}}</text>
+                        </view>
+                    </view>
+                    <view catchtap="goToAddress" 
+                        data-storeshopname="{{item.shop_name}}" 
+                        data-storeshopaddress="{{item.shop_address}}" 
+                        data-storeshoplatitude="{{item.latitude_g}}"                                            
+                        data-storeshoplongitude="{{item.longitude_g}}">
+                        <image src='../../img/location.png' class='navigate'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+
+</swiper-item>

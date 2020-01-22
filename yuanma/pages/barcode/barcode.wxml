@@ -1,0 +1,46 @@
+<view class="container">
+
+    <view class='photo'>
+        <view class="tanchuang">
+            <view class='wen'>
+                温馨提示：结账前出示会员码扫一扫
+            </view>
+            <image src="../../img/question.png" class="question" bindtap="showtext"></image>
+        </view>
+          <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+        <cover-view class="{{judgeshow?'isshow':'ishide'}}">
+            <cover-view class="hidetitle">电子会员码使用说明：</cover-view>
+            <cover-view class="hidebody">在付款或参与兑换时出示会员码，即可完成会员积分或消分（以店内活动为准，自助收银设备暂不支持）。
+            </cover-view>
+             <cover-view class="hidebody">为保证您的账户安全，会员码每分钟自动更新，请您当面出示使用，截图无效。
+            </cover-view>
+       
+            
+        </cover-view>
+         <cover-image src="../../img/close.png" class="close" bindtap="closemask" wx:if="{{showModal}}"></cover-image>
+        
+        <view class="panel">
+            <!-- 条形码部分 -->
+            <view class="barcode">
+                <canvas canvas-id="barcode" class="maceng"/>
+                <view class="barnum">{{shuzi}}</view>
+            </view>
+            <!-- 弹窗内容 -->
+      
+        
+            <!-- 二维码部分 -->
+            <view class="qrcode" bindtap="tap" bindtouchstart="touchStart" bindtouchend="touchEnd">
+                <canvas canvas-id="qrcode" class="maceng"/>
+            </view>
+        </view>
+        <view class='tishi'>
+            <text class='ti'>每分钟自动刷新,请当面使用</text>
+        </view>
+    </view>
+    <view class='btn' bindtap="openOfflinePay" id="pay">
+        <button hover-class="btn-hover">
+            <image src='../../img/pay.png' class='pay'></image>
+            <text>微信支付</text>
+        </button>
+    </view>
+</view>

@@ -1,0 +1,78 @@
+<view class='container'>
+    <view class='header' wx:if="{{head_img != ''}}">
+        <view class="weui-flex">
+            <view class="weui-flex__item1">
+                <image src="{{head_img}}" class="slide-image" />
+            </view>
+            <view class="weui-flex__item1">
+                <view class='information'>{{username}}</view>              
+                <navigator  hover-class="none" class='open' wx:if="{{vipCard == ''}}" url="/pages/open/open">开通/绑定会员卡 ></navigator>
+                <navigator  hover-class="none" class='format' wx:else>{{vipCard}}</navigator>
+                   <view class="czz"  wx:if="{{vipCard != ''}}" bindtap="gomember">
+                   <text>成长值{{czz}}</text>
+                   <text>></text>
+                  </view>
+            </view>
+            <navigator hover-class="none" url="/pages/barcode/barcode" class="weui-flex__item2" wx:if="{{vipCard != ''}}">
+                <view class="view-num" >
+                    <image src='../../img/erwei.png' class='erwei'></image>
+                </view>
+                <view class="code">会员码</view>
+            </navigator>
+            <navigator hover-class="none" url="/pages/open/open" class="weui-flex__item2" wx:else>
+                <view class="view-num" >
+                    <image src='../../img/erwei.png' class='erwei'></image>
+                </view>
+                <view class="code">会员码</view>
+            </navigator>
+        </view>
+    </view>
+    <view class='header' wx:else>
+        <navigator class="weui-flex" url="/pages/authorize/index" hover-class="none">
+            <view class="weui-flex__item1">
+                <image src="http://wxapp.ruyigou.com/static/admin/images/pic/whead.png" class="slide-image" />
+            </view>
+            <view class="weui-flex__item1">
+                <view class='information'>未登录</view>              
+            </view>
+            <view class="weui-flex__item2" >
+                <view class="view-num" >
+                    <image src='../../img/erwei.png' class='erwei'></image>
+                </view>
+                <view class="code">会员码</view>
+            </view>
+        </navigator>
+    </view>
+    <view class='main'>
+        <view class="weui-flex1">
+            <view class="weui-flex__item4" bindtap='goTOStore' id="store">
+                <image src='../../img/store.png' mode="widthFix" class='icon'></image>
+                <view class="placeholder">附近门店</view>
+            </view>
+            <view class="weui-flex__item4" bindtap='goToApp' id="app" >
+                <view class="view-num" >
+                    <image src='../../img/zbapp.png' mode="widthFix" class='icon'></image>
+                </view>
+                <view class="placeholder">掌尚北国APP</view>
+            </view>
+            <view class="weui-flex__item4" bindtap='makePhoneCall' id="phone">
+                <view>
+                    <image src='../../img/mobile.png' class='icon' ></image>
+                    <view class="placeholder">电话客服</view>
+                    <view class="time">9:00-21:00</view>
+                </view>
+            </view>
+            <view class="weui-flex__item4">
+                <button open-type='contact' class='btn' hover-class="btn-hover">
+                   <image src='../../img/customer.png' mode="widthFix" class='icon'></image>
+                    <view class="placeholder">在线客服</view>
+                </button>
+                <view class="time">9:00-21:00</view>
+            </view>
+            <view bindtap="goMyactive"  class="weui-flex__item4"  id="activity">
+                <image src='../../img/activity.png' mode="widthFix" class='icon'></image>
+                <view class="placeholder">我的活动</view>
+            </view>
+        </view>
+    </view>
+</view>

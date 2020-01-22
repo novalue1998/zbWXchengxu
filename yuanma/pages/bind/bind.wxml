@@ -1,0 +1,91 @@
+<!--pages/bind/bind.wxml-->
+<view class='page' xmlns:wx="http://www.w3.org/1999/xhtml" wx:if="{{!hasPhone}}">
+    <view class="weui-cells__title"></view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="卡号/手机号" bindinput="getPhone" type='number' name="phone" />
+            </view>
+        </view>
+    </view>
+    <button type='primary' class='next' id="bindcard_next"  disabled='{{isDisabled}}' bindtap='step' hover-class="btn-hover">下一步</button>
+    <view class='tishi'>
+        <text class='ti'>温馨提示</text>
+    </view>
+    <view class="WViewColumn1" style="">
+        <view class="WViewRow1" style="">1. 仅支持绑定北人集团实体会员卡</view>
+        <view class="WViewRow2" style="">2. 一个微信号仅可绑定一张北人会员卡</view>
+        <view class="WViewRow3" style="">3. 若上述卡信息与您的信息不符，请携带相关证件到北人集团任一卖场会员中心处理后再做绑定</view>
+        <view class="WViewRow4" style="">4. 会员卡密码用于在掌尚北国APP消分兑礼，设置后请牢记</view>
+    </view>
+
+</view>
+<!-- 点击下一步后页面 -->
+<view class='page' xmlns:wx="http://www.w3.org/1999/xhtml" wx:elif="{{hasPhone}}">
+    <view class='information'>已向您办卡时预留手机号{{list.mobile}}发送短信验证码，请正确输入验证码并补全证件号后六位，完成绑定</view>
+
+    <view class="weui-cells weui-cells_after-title">
+
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    <text space='nbsp'>会 员 卡 号</text>
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" disabled='true' value='{{list.card_num}}' />
+            </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">短信验证码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" bindinput='bindCodeInput' name="yan" placeholder="请输入短信验证码" type='number' />
+            </view>
+            <view class="weui-cell__ft">
+                <view class="weui-vcode-btn" hidden='{{!codeIsCanClick}}' bindtap="goGetCode">获取短信验证码</view>
+                <view class="weui-vcode-btn" hidden='{{codeIsCanClick}}'>{{last_time}}秒后重新发送</view>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    <text space='nbsp'>证 件 号 码</text>
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input"  bindinput="getId" name="id_num" disabled='true' value='{{list.id_num}}' type='number' />
+            </view>
+        </view>
+         <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">补全后六位</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input  name="last_num"  class="weui-input" placeholder="证件号后六位"bindinput="getLastNum"  maxlength='6' />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">会员卡密码</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input type='number' password name="password" bindinput="getPassword" class="weui-input" placeholder="设置6位数字密码" maxlength='6' />
+            </view>
+        </view>
+    </view>
+    <button type='primary' class='next' id='bind_card' bindtap='openCard' disabled='{{isBind}}' hover-class="btn-hover">立即绑定</button>
+    <view class='tishi'>
+        <text class='ti'>温馨提示</text>
+    </view>
+    <view class="WViewColumn1" style="">
+        <view class="WViewRow1" style="">1. 仅支持绑定北人集团实体会员卡</view>
+        <view class="WViewRow2" style="">2. 一个微信号仅可绑定一张北人会员卡</view>
+        <view class="WViewRow3" style="">3. 若上述卡信息与您的信息不符，请携带相关证件到北人集团任一卖场会员中心处理后再做绑定</view>
+        <view class="WViewRow4" style="">4. 会员卡密码用于在掌尚北国APP消分兑礼，设置后请牢记</view>
+
+    </view>
+
+</view>

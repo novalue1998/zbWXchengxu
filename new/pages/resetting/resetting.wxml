@@ -1,0 +1,24 @@
+<!--pages/resetting/resetting.wxml-->
+<text class="phoneNum">预留手机号：{{encry}}</text>
+<view class="pswInfo">
+    <view class="code">
+        <text>验\t证\t码\t</text>
+        <input  maxlength='4' bindtap="ishide" bindinput="getPhonecode" type="number" placeholder="请输入手机验证码"></input>
+        <text bindtap="getCode" class="{{showtext?'isshow':'hide'}}">获取验证码</text>
+        <text class="{{showtime?'isshow':'hide'}}">{{time}}s</text>
+    </view>
+    <view class="newPwd">
+        <text>新\t密\t码\t</text>
+        <input bindtap="ishide" type="number" maxlength='6' bindinput="getPwd" type="number" placeholder="请输入您的新密码"></input>
+        <text class="{{showNum?'isshow':'hide'}}">密码须为6位</text>
+    </view>
+    <view class="againPwd">
+        <text>确认密码</text>
+        <input bindtap="ishide" type="number" maxlength='6' bindinput="againPwd" type="number" placeholder="请再次输入密码"></input>
+        <text class="{{showcoler?'isshow':'hide'}}">密码不一致</text>
+    </view>
+    <button bindtap="submit">确认重置</button>
+</view>
+<text class="prompt">温馨提示:</text>
+<text class="prompt">请设置6位纯数字密码，以便用于线上线下消分、会员身份认证等！</text>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>

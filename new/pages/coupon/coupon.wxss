@@ -1,0 +1,342 @@
+/*切换栏*/
+page{
+   background: #f5f5f5;
+}
+.swiper-box{
+    margin-top: 100rpx;
+    height: 500rpx;
+    background: #f5f5f5;
+}
+.swiper-tab {
+    height: 110rpx;
+    width: 100%;
+    line-height: 80rpx;
+    background: #fff;
+    color: #000;
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 20rpx solid #f5f5f5;
+}
+
+.nothing{
+    display:flex;  
+     justify-content: center;        
+     align-items:center;
+}
+.picture image{
+    margin-top: 300rpx;
+    margin-left: 216rpx;
+    width: 300rpx;
+    height: 300rpx;
+}
+.swiper-tab-list {
+    padding: 0 56rpx;
+    font-size: 30rpx;
+}
+
+.on {
+    border-bottom: 2px solid red;
+    font-size: 40rpx;
+}
+/* 广告位 */
+.advertisement{
+    height: 150rpx;
+    width: 100%;
+    margin-top: 20rpx;
+}
+/* 列表页 */
+
+.coupon-list {
+    width: 710rpx;
+    /* height: 250rpx; */
+    margin: 0 auto;
+    border-bottom: 30rpx solid #f5f5f5;
+}
+
+.coupon-list .item {
+    width: 710rpx;
+    height: 250rpx;
+    /* margin-bottom: 20rpx; */
+}
+
+.coupon-list .item .float-li {
+    width: 500rpx;
+    float: left;
+    height: 100%;
+    border-right: 2rpx dashed rgba(255, 255, 255, 0.3);
+}
+
+.coupon-list .item .float-li-rig {
+    width: 200rpx;
+    height: 100%;
+    color: black;
+    float: right;
+}
+
+.coupon-left {
+    position: relative;
+}
+
+.coupon-left .t {
+    position: absolute;
+    color: #000;
+}
+
+.coupon-left .t1 {
+    height: 150rpx;
+    width: 170rpx;
+    margin-top: 60rpx;
+    margin-left: 40rpx;
+}
+
+.coupon-left .t2 {
+    left: 260rpx;
+    top: 50rpx;
+    width: 220rpx;
+    font-size: 30rpx;
+}
+
+.coupon-left .t3 {
+    left: 260rpx;
+    width: 220rpx;
+    top: 180rpx;
+    font-size: 30rpx;
+    color: #88ba1f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.coupon-rig {
+    position: relative;
+    font-size: 30rpx;
+}
+
+.coupon-rig .t {
+    text-align: center;
+    color: black;
+}
+
+
+.coupon-rig .t3 {
+    padding-top: 120rpx;
+}
+
+.coupon-rig .t3 text {
+    background: #88ba1f;
+    color: #fff;
+    border-radius: 30rpx;
+    padding: 10rpx 40rpx;
+    margin-left: 15rpx;
+}
+
+.icon {
+    width: 150rpx;
+    height: 150rpx;
+    margin-left: 20rpx;
+    margin-top: -30rpx;
+}
+
+.note {
+    background: #faeab7;
+}
+
+.stamp {
+    width: 700rpx;
+    height: 250rpx;
+    margin-bottom: 50rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.stamp01 {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, black 30rpx);
+    background-size: 10rpx 10rpx;
+    background-position: 9rpx 3rpx;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+/* 遮罩层 */
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.5;
+}
+
+/* 弹出层 */
+
+.modalDlg {
+    height:950rpx;
+    width: 650rpx;
+    position: fixed;
+    top: 30rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 弹出层里面的按钮 */
+
+.ok {
+    width: 160rpx;
+    height: 70rpx;
+    background: #44b549;
+    line-height: 70rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    margin: 20rpx 220rpx;
+    border-radius: 200rpx;
+}
+
+/* 弹窗内布局 */
+
+.shopname {
+    background: red;
+    font-size: 36rpx;
+    width: 100%;
+    height: 84rpx;
+}
+
+.typename {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.title {
+    margin-top: 12rpx;
+    font-size: 30rpx;
+    
+}
+
+.time {
+    margin-top: 12rpx;
+    font-size: 30rpx;
+    border-bottom: 6rpx dashed rgba(255, 255, 255, 0.3);
+}
+
+/* 条形码 */
+.barcode {
+    display: flex;
+    height: 240rpx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rpx;
+}
+canvas{
+    width: 480rpx;
+height: 300rpx;
+display: block;
+position: relative;
+
+}
+/* 二维码 */
+.qrcode {
+    height: 420rpx;
+    width: 420rpx;
+    margin-top: -150rpx;
+    margin-left: 105rpx;
+}
+.quanma{
+    margin-top: -100rpx;
+    font-size: 30rpx;
+}
+.close{
+   position: fixed;
+}
+.close image{
+  width: 80rpx;
+    height: 80rpx;
+   position: absolute;
+   top: 1000rpx;
+   left: 50%;
+   margin-left: -40rpx;
+}
+.bt{
+    margin-top: 24rpx;
+    font-size: 30rpx;
+    text-align: center;
+}
+/* .off{
+    position: fixed;
+} */
+.off image{
+    width: 80rpx;
+    height: 80rpx;
+   position: absolute;
+   top: 1000rpx;
+   left: 50%;
+   margin-left: -40rpx;
+}
+.message{
+    display: flex;
+    flex-direction: row;
+    margin-top: -50rpx;
+    background: #fff;
+}
+.xiangqing{
+     background: #fff;
+    width: 710rpx;
+    display: flex;
+    flex-direction: column;
+    margin-top: -50rpx;
+    font-size: 30rpx;
+    height: 100%;
+}
+.leftMessage{
+    width: 660rpx;
+    height: 100%;
+    font-size: 30rpx;
+    margin-left: 15rpx;
+    color: #666666;
+}
+.left{
+    /* background: #f5f5f5; */
+    width: 660rpx;
+     margin-left: 15rpx;
+     display: flex;
+     flex-direction: column;
+    padding: 60rpx 0 30rpx;
+    color: #666666;
+    font-size: 28rpx;
+}
+.select_img {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    transition: transform 0.3s;
+    padding: 10rpx 40rpx;
+ 
+}
+.select_img_rotate {
+    transform: rotate(180deg);
+}
+.all{
+    text-align: center;
+    font-size: 30rpx;
+    padding: 0 0 40rpx;
+}

@@ -1,0 +1,73 @@
+@import "../../css/coupon.wxss";
+page {
+    background: #eee;
+}
+/* 搜索框 */
+.page_row{height: 55px;width: 100%; background: #f5f5f5; display: flex;  flex-direction: row;text-align: center;align-items: center;justify-content: center; position: fixed;top: 0; z-index: 9999 ;}  
+.search{  margin-top: 25rpx;}  
+.search_arr {  border-radius: 20rpx; width: 65%;  margin-left: 15rpx; background: #fff; }  
+.search_arr input{  height: 70rpx;  border-radius: 5px;width: 90%;  }  
+.bc_text {line-height: 68rpx;  height: 68rpx;  margin-top: 34rpx;  }  
+ .sousuo { margin-left:25rpx;   text-align: center; color:#928686; font-size: 32rpx;}  
+.screen{height: 50rpx;width: 50rpx;margin-top: 25rpx; margin-left: 10rpx;position: absolute;}
+.searchcion {margin: 15rpx 10rpx 10rpx 10rpx;   position: absolute;  left:90rpx; text-align: center; width: 10%} 
+.main{
+    text-align: left;
+
+    margin-left: 90rpx;
+}
+.nothing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.picture image {
+    margin-top: 300rpx;
+    margin-left: 216rpx;
+    width: 300rpx;
+    height: 300rpx;
+}
+
+/* 弹框 */
+.modalDlg {
+    width: 80%;
+    position: fixed;
+    top: 150rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coupon-list {
+    width: 710rpx;
+    margin: 0 auto;
+    margin-top: 150rpx;
+}
+
+.coupon-list .item {
+    width: 710rpx;
+    height: 250rpx;
+}
+.coupon-list .item .float-li-rig {
+    width: 230rpx;
+    height: 100%;
+    color: black;
+    float: right;
+    text-align: center;
+}
+.photo {
+    display: flex;
+    flex-direction: row;
+}
+.coupon-rig .gocoupon {
+    margin-top: 20rpx;
+}
+
+.coupon-rig .gocoupon-end {
+    margin-top: 20rpx;
+}

@@ -1,0 +1,332 @@
+.navigate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tishi {
+    text-align: center;
+    height: 50rpx;
+    margin-top: 60rpx;
+    margin-bottom: 70rpx;
+}
+.loadingcomplete {
+    display: table;
+    white-space: nowrap;
+    border-spacing: 1rem 0;
+    font-size: 30rpx;
+    color: #d3d1cf;
+}
+
+.loadingcomplete::before, .loadingcomplete::after {
+    display: table-cell;
+    content: "";
+    width: 50%;
+    background: linear-gradient(#d3d1cf, #d3d1cf) repeat-x center; 
+    background-size: 1rpx 1rpx;
+}
+
+/* 弹框 */
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9999;
+    opacity: 0.7;
+}
+
+.modalDlg {
+    height: 700rpx;
+    width: 80%;
+    position: fixed;
+    top: 150rpx;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.jifen {
+    width: 100%;
+    height: 230rpx;
+    margin-top: -35rpx;
+}
+.points {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.surplus {
+    font-size: 30rpx;
+    color: #222;
+}
+.num {
+    font-size: 50rpx;
+    color: #f23030;
+}
+.number {
+    font-size: 35rpx;
+    color: #222;
+    margin-left: 20rpx;
+}
+.password {
+    border-bottom: 2rpx solid #999;
+    width: 500rpx;
+    margin-top: 50rpx;
+}
+.forget {
+    font-size: 30rpx;
+    margin-left: 20rpx;
+}
+.exchange {
+    background: #f23030;
+    color: #fff;
+    margin-left: 100rpx;
+    border-radius: 20rpx;
+    font-size: 35rpx;
+    margin-top: 60rpx;
+}
+.cardPassword {
+    font-size: 30rpx;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+.none {
+    margin-left: 100rpx;
+    border-radius: 20rpx;
+    font-size: 35rpx;
+    margin-top: 60rpx;
+}
+.error {
+    color: red;
+    margin-top: 10rpx;
+}
+.coupon-list .item .float-li {
+    width: 470rpx;
+    float: left;
+    height: 100%;
+    border-right: 2rpx dashed rgba(0, 0, 0, 0.3);
+}
+.coupon-left {
+    position: relative;
+}
+.coupon-left .t {
+    position: absolute;
+    color: #000;
+}
+.coupon-left .zhuanx {
+    height: 35rpx;
+    width: 90rpx;
+    margin-top: 23rpx;
+    z-index: 2;
+}
+.coupon-left .t1 {
+    height: 150rpx;
+    width: 170rpx;
+    margin-top: 50rpx;
+    margin-left: 30rpx;
+}
+.coupon-left .t2 {
+    left: 220rpx;
+    top: 15rpx;
+    font-size: 30rpx;
+}
+.coupon-left .t4 {
+    left: 220rpx;
+    top: 190rpx;
+    width: 220rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.coupon-rig .t1 {
+    font-size: 30rpx;
+    padding: 40rpx 0 10rpx 0;
+    position: relative;
+}
+.coupon-rig .t2 {
+    font-size: 30rpx;
+    width: 150rpx;
+    padding: 0 40rpx;
+}
+
+.coupon-rig .t3 {
+    font-size: 30rpx;
+    padding: 5rpx 0 0 0;
+}
+
+.coupon-rig .t4 {
+    padding: 15rpx 0 10rpx 0;
+}
+.coupon-rig .end {
+    height: 150rpx;
+    width: 130rpx;
+    margin-top: 50rpx;
+}
+.coupon-rig .green {
+    height: 60rpx;
+    width: 130rpx;
+    padding: 70rpx 0 0 0;
+}
+.coupon-rig .yellow {
+    height: 60rpx;
+    width: 130rpx;
+    padding: 70rpx 0 0 0;
+}
+.coupon-rig .t4 text {
+    background: #f00;
+    color: #fff;
+    border-radius: 18rpx;
+    padding: 8rpx 30rpx;
+    font-size: 30rpx;
+}
+.coupon-rig .receive {
+    margin-top: -63rpx;
+    font-size: 25rpx;
+    color: #f90;
+}
+.coupon-rig .receive-two {
+    margin-top: -60rpx;
+    font-size: 25rpx;
+    color: #88ba1f;
+}
+.coupon-rig .gocoupon-two {
+    margin-top: 25rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.coupon-rig .gocoupon-end text {
+    background: #88ba1f;
+    color: #fff;
+    border-radius: 18rpx;
+    padding: 8rpx 30rpx;
+    font-size: 30rpx;
+}
+.coupon-rig .gocoupon text {
+    background: #f90;
+    color: #fff;
+    border-radius: 18rpx;
+    padding: 8rpx 30rpx;
+    font-size: 30rpx;
+}
+.coupon-left image{
+     width: 40rpx;
+    height: 30rpx;
+}
+.card-garde {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 150rpx;
+    left: 180rpx;
+}
+.coupon-left .one-title{
+    left: 210rpx;
+    top: 40rpx;
+    font-size: 30rpx;
+}
+.coupon-left .one-shop {
+    left: 220rpx;
+    top: 160rpx;
+    width: 220rpx;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hour {
+    background: #f00;
+    color: #fff;
+    border-radius: 10rpx;
+    width: 18%;
+    font-size: 28rpx;
+    padding: 5rpx;
+}
+
+.min {
+    background: #f00;
+    color: #fff;
+    border-radius: 10rpx;
+    width: 18%;
+    font-size: 28rpx;
+    padding: 5rpx;
+}
+
+.second {
+    background: #f00;
+    color: #fff;
+    border-radius: 10rpx;
+    width: 18%;
+    font-size: 28rpx;
+    padding: 5rpx;
+}
+.stamp {
+    width: 700rpx;
+    height: 250rpx;
+    margin-bottom: 20rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.stamp i {
+    position: absolute;
+    left: 20%;
+    top: 90rpx;
+    height: 500rpx;
+    width: 700rpx;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: rotate(-30deg);
+}
+
+.stamp01 {
+    background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 30rpx, black 30rpx);
+    background-size: 10rpx 10rpx;
+    background-position: 9rpx 3rpx;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+}
+.coupon-rig .kaiqiang {
+    margin-top: 50rpx;
+    font-size: 30rpx;
+    color: red;
+}
+.hide {
+    display: none;
+}
+.Closebutton {
+    margin-top: 740rpx;
+    display: inline-block;
+    width: 80rpx;
+    height: 80rpx;
+    position: absolute;
+    z-index: 9999;
+}
+.convert {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 35rpx;
+    position: absolute;
+    z-index: 999;
+    margin-top: 500rpx;
+}

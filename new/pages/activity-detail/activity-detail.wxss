@@ -1,0 +1,168 @@
+page{background: #eeeeee;}
+.content{width: 100%;height: 100%;}
+.header{height: 100%;width: 100%;background: #ffffff;}
+.mainPicture{width: 100%;height:410rpx;}
+.title{font-size: 32rpx;color: #222222; text-align: center;padding:20rpx; width: 90%; display: block;
+    border-bottom: 1rpx solid #eeeeee;}
+.bottom{display: flex;flex-direction: row;margin-top: 35rpx;margin-bottom: 15rpx;}
+.right{position: absolute;right: 50rpx;display: flex;margin-top: 10rpx;}
+.card-garde{margin-left: 15rpx;}
+.card-garde image{ width: 40rpx;height: 30rpx;}
+.vip{color: #ffffff;font-size: 24rpx;background: #f23030;height: 35rpx;letter-spacing: 2rpx;margin-top:6rpx;}
+.free{margin-left: 30rpx;color: #f23030;font-size: 40rpx;}
+.min{font-size: 30rpx;margin-left: 2rpx;margin-top: 10rpx;}
+.alignment{display: flex;}
+.main{width: 100%;margin-top: 30rpx;background: #ffffff;}
+.left{margin-left: 20rpx;color: #222222;line-height: 75rpx; display: flex;}
+.leftson{width: 30%;font-size: 28rpx;}
+.mainright{margin-left: 40rpx;width: 100%}
+.typeface{border-bottom: 1rpx solid #eeeeee;color: #999999;line-height: 75rpx;width: 100%;font-size: 28rpx;}
+.phone2{height: 36rpx;width: 36rpx;margin-left: 15rpx;}
+.top{display: flex;margin-top: 25rpx;border-bottom: 1rpx solid #eeeeee;color: #222222;line-height: 80rpx;} 
+.activity{width: 100%;background: #ffffff; margin-top: 25rpx;}
+.xiangqing{width: 34rpx;height: 30rpx;margin-top: 25rpx;margin-left: 20rpx;}
+.active{margin-left: 20rpx;}
+.my{height: 50rpx;margin-top: 10rpx;margin-bottom: 5rpx;}
+.myactive{height: 44rpx;width: 44rpx;}
+.share{margin-left: 50rpx; height: 110rpx;width: 110rpx;}
+.sharetop{position: absolute;right: 50rpx;}
+ .wxParse-html {
+    padding-bottom: 150rpx;
+    width: 98%;
+    margin-top: 50rpx;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.wxParse-html .wxParse-body{
+    display: inline;
+    width: 95%;
+}
+.wxParse-html .wxParse-body .wxParse-div .wxParse-div .wxParse-div .wxParse-p .wxParse-img {
+    width: 98% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    margin-top: 15rpx !important;
+}
+.wxParse-html .wxParse-style .WxEmojiView.wxParse-inline{
+    display: none;
+}
+.wxParse-span wxParse-inline .wxParse-span .wxParse-span .WxEmojiView wxParse-inline{
+    color: green !important;
+}
+.wxParse-html .wxParse-body .wxParse-div .article-content .wxParse-div .wxParse-p .wxParse-span{
+     display: inline;
+}
+.wxParse-html .wxParse-body .wxParse-div .article-content .wxParse-div .wxParse-p .wxParse-span .wxParse-inline{
+     text-align: center;
+     display: inline;
+}
+.wxParse-html .wxParse-body .wxParse-div .article-content .wxParse-div .wxParse-p .wxParse-strong{
+     display: inline;
+} 
+.wxParse-html .wxParse-body .wxParse-div .article-content .wxParse-div .wxParse-p .wxParse-strong .wxParse-span{
+     display: inline;
+} 
+.status{display: flex;height: 100rpx;position: fixed;width: 100%;bottom: 0;z-index: 999;}
+.loot{font-size: 40rpx;background: #666666;text-align: center;justify-content: center;align-items: center;color: #ffffff;width: 100%;display: flex;}
+.end{font-size: 40rpx;background: #cccccc;text-align: center;justify-content: center;align-items: center;color: #ffffff;width: 100%;display: flex;}
+.must{font-size: 40rpx;background: #f23030;text-align: center;justify-content: center;align-items: center;color: #ffffff;width: 100%;display: flex;}
+.discontent{font-size: 40rpx;background: #999999;text-align: center;justify-content: center;align-items: center;color: #ffffff;width: 100%;display: flex;}
+.mask { width: 100%; height: 100%;position: fixed;top: 0;left: 0;background: #000;z-index: 999;opacity: 0.7;}
+
+.modalDlg {height: 840rpx;width: 82%;position: fixed;top: 10%;left: 0;right: 0;z-index: 999;margin: 0 auto;background-color: #fff;
+    border-radius: 20rpx;display: flex;flex-direction: column;align-items: center;}
+.details{z-index: 9999;position: absolute; top: 70rpx;left: 80rpx;width: 80%; color:#966b2d; }
+.off image{ width: 80rpx;height: 80rpx;position: absolute;top: 890rpx;left: 50%;margin-left: -40rpx;}
+.bbbb image{position: absolute;top: 900rpx;left: 5%;}
+.bbbb button{position: absolute;top: 900rpx;left: 8%;}
+/* 弹窗内布局 */
+
+.shopname {
+    background: red;
+    font-size: 36rpx;
+    width: 100%;
+    height: 84rpx;
+    border-radius: 20rpx 20rpx 0 0 ;
+}
+
+.typename {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 30rpx;
+    width: 90%;
+}
+
+.time {
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    border-bottom: 6rpx dashed rgba(255, 255, 255, 0.3);
+}
+/* 弹出层里面的按钮 */
+
+.ok {
+    width: 160rpx;
+    height: 70rpx;
+    background: #44b549;
+    line-height: 70rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 30rpx;
+    margin: 20rpx 220rpx;
+    border-radius: 200rpx;
+}
+.bt{
+    margin-top: 24rpx;
+    font-size: 24rpx;
+    text-align: center;
+}
+/* 条形码 */
+.barcode {
+    display: flex;
+    height: 240rpx;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20rpx;
+}
+canvas{
+    width: 480rpx;
+height: 300rpx;
+display: block;
+position: relative;
+
+}
+canvas.erwei{
+    margin-top: 15rpx;
+    margin-left: 30rpx;
+}
+/* 二维码 */
+.qrcode {
+    height: 420rpx;
+    width: 420rpx;
+    margin-top: -150rpx;
+    margin-left: 105rpx;
+}
+.quanma{
+    margin-top: -100rpx;
+    font-size: 32rpx;
+}
+/* 分享页面 */
+.words{color: #966b2d;text-indent: 1em;margin-top: 20rpx;font-size: 28rpx;}
+.activity-time{color: #966b2d;text-indent: 1em; font-size: 28rpx;}
+.thumb{width: 460rpx;height: 250rpx;margin-top: 40rpx;}
+.partake{position: absolute;top: 1000rpx;z-index: 9999;display: flex;}
+.partake image{position: absolute;top: 870rpx;display: flex;}
+.btn{width: 220rpx;height: 90rpx;background-color: #f23030;color: #fff;font-size: 32rpx;display: flex;justify-content: center;align-items: center;}
+.keep{width: 220rpx;height: 90rpx;background-color: #f23030;color: #fff;font-size: 32rpx;display: flex;justify-content: center;align-items: center;margin-left: 300rpx;}

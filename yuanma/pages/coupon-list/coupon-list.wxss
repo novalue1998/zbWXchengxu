@@ -1,0 +1,139 @@
+@import "../../css/coupon.wxss";
+page {
+    background: #f5f5f5;
+    height: 100%;
+}
+
+/* 搜索框 */
+
+.page_row {
+    height: 55px;
+    width: 100%;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    border-bottom: 20rpx solid #f5f5f5;
+}
+
+
+
+
+.search {
+    width: 65%;
+    margin-top: 25rpx;
+}
+
+.search_arr {
+    border-radius: 20rpx;
+    margin-left: 10rpx;
+    background: #fff;
+}
+
+.search_arr input {
+    margin-left: 70rpx;
+    height: 70rpx;
+    border-radius: 5px;
+}
+
+.bc_text {
+    line-height: 68rpx;
+    height: 68rpx;
+    margin-top: 34rpx;
+}
+
+.sousuo {
+    margin-top: 25rpx;
+    margin-left: 25rpx;
+    text-align: center;
+    color: #928686;
+    font-size: 32rpx;
+}
+
+.screen {
+    height: 50rpx;
+    width: 50rpx;
+    margin-top: 25rpx;
+    margin-left: 10rpx;
+}
+
+.searchcion {
+    margin: 15rpx 10rpx 10rpx 10rpx;
+    position: absolute;
+    left: 80rpx;
+    z-index: 2;
+    text-align: center;
+}
+
+/* 头部导航 */
+
+.swiper-tab {
+    height: 80rpx;
+    width: 100%;
+    line-height: 80rpx;
+    background: #fff;
+    color: #000;
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 20rpx solid #f5f5f5;
+    margin-top: 120rpx;
+}
+
+.swiper-tab-list {
+    padding: 0 50rpx;
+    font-size: 28rpx;
+}
+
+.on {
+    border-bottom: 2px solid red;
+    font-size: 40rpx;
+    color: red;
+}
+
+/* 优惠券列表样式 */
+
+.coupon-list {
+    width: 710rpx;
+    margin: 0 auto;
+    margin-top: 230rpx;
+    border-bottom: 5rpx solid #f5f5f5;
+    height: 100%;
+}
+
+.coupon-list .item {
+    width: 710rpx;
+    height: 250rpx;
+}
+
+.coupon-list .item .float-li-rig {
+
+    width: 230rpx;
+    height: 100%;
+    color: black;
+    float: right;
+    text-align: center;
+}
+
+.photo {
+    display: flex;
+    flex-direction: row;
+}
+
+.coupon-rig .gocoupon {
+    margin-top: 25rpx;
+}
+
+.coupon-rig .gocoupon-end {
+    margin-top: 25rpx;
+}
+

@@ -1,0 +1,124 @@
+/* pages/wheel/wheel.wxss */
+page {
+  background-color: #f3f4f5;
+}
+
+.wheel {
+  width: 100%;
+  margin-top: 30rpx;
+  /* border: 1px solid red; */
+}
+
+.wheel swiper-item image {
+  width: 93%;
+  display: block;
+  margin: 30rpx auto;
+  /* height: 1000rpx; */
+}
+
+
+.bigImg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.bigImg image {
+  width: 100%;
+}
+
+.dengSwiper {
+  height: 10%;
+  margin-top: 48rpx;
+}
+
+.imageSwiper {
+  height: 70%;
+  margin-top: 30rpx;
+}
+
+.deng {
+  height: 70%;
+  margin-top: 50rpx;
+}
+
+.dengimage {
+  height: 70%;
+}
+
+.showIndexImg {
+  height: 82%;
+  box-shadow: 0 0rpx 30rpx rgba(0, 0, 0, 0.6);
+}
+
+
+.currentIndex {
+  text-align: center;
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  color: #222222;
+}
+
+.shareBut {
+  width: 85%;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 25rpx;
+  color: white;
+  border-radius: 50rpx;
+  background-image: linear-gradient(to right, #f23030, #fd7146);
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.shareicon {
+  width: 40rpx;
+  height: 43rpx;
+  position: absolute;
+  z-index: 2;
+  display: block;
+  margin: 0 auto;
+  margin-left: 33%;
+  margin-top: 20rpx;
+
+}
+
+
+.shownoposter {
+  display: block;
+  width: 75%;
+  margin: 150rpx auto;
+}
+
+.enlarge {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: -130rpx;
+}
+
+.enlarge image {
+  width: 30rpx;
+  height: 35rpx;
+  margin-top: 10rpx;
+}
+
+.enlarge text {
+  color: #666666;
+  margin-left: 20rpx;
+}
+.swiperWidth{
+  width: 60%;
+}
+.makePoster{
+  text-align: center;
+  color: #666666;
+  font-size: 40rpx;
+  display: block;
+  margin: -150rpx auto;
+}

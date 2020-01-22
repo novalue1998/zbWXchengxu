@@ -1,0 +1,52 @@
+<!--pages/memberbenefits/memberbenefits.wxml-->
+<image src="../../img/growthvalue_topbg.jpg" class="topbg"></image>
+<view class="header">
+  <view>
+    <image src="../../img/growthvalue_tag.png" class="tag"></image>
+    <text class="cardrank">{{current_level}}</text>
+  </view>
+  <view class="viprules" bindtap="goViprules">
+    <text>会员章程</text>
+  </view>
+   <view class="viprules2" bindtap="goViprules">
+    <image class="kuohao" src="../../img/growthvalue_rightarrow.png"></image>
+  </view>
+  <view class="growvalue">
+    <text>成长值:</text>
+    <text>{{growValue}}</text>
+    <text class="{{judgeshow?'isshow':'ishide'}}">(升级{{next_level}}还需要{{next_point}}分)</text>
+    <text class="{{judgeshow1?'isshow':'ishide'}}">恭喜成为北人集团SVIP钻石卡会员</text>
+  </view>
+  <view class="cardkind">
+    <text>VIP</text>
+    <text>VIP</text>
+    <text>SVIP</text>
+    <text>SVIP</text>
+  </view>
+  <view class="cardkindCh">
+    <text>银卡</text>
+    <text>金卡</text>
+    <text>铂金卡</text>
+    <text>钻石卡</text>
+  </view>
+  <view class="progress"></view>
+  <view class="growimg">
+    <image src="../../img/growthvalue_smallcircle.png"></image>
+    <image src="../../img/growthvalue_smallcircle.png"></image>
+    <image src="../../img/growthvalue_smallcircle.png"></image>
+    <image src="../../img/growthvalue_smallcircle.png"></image>
+  </view>
+   <view class="growvalueimg">
+    <image src="../../img/growthvalue_circle_gray.png" class="{{img1show?'isshow':'ishide'}}"></image>
+    <image src="../../img/growthvalue_circle_golden.png" class="{{img2show?'isshow':'ishide'}}"></image>
+    <image src="../../img/growthvalue_circle_red.png" class="{{img3show?'isshow':'ishide'}}"></image>
+    <image src="../../img/growthvalue_circle_black.png" class="{{img4show?'isshow':'ishide'}}"></image>
+  </view>
+  <view class="valuenum">
+    <text>0</text>
+    <text>2000</text>
+    <text>10000</text>
+    <text>80000</text>
+  </view>
+</view>
+<image src="../../img/growthvalue_rule.jpg" class="footer"></image>

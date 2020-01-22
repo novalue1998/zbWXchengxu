@@ -1,0 +1,26 @@
+<!--pages/poster/poster.wxml-->
+<view class='select_box'>
+	<view class='select'>
+		<view class="selectshop">
+			<text class='select_text'>{{sendShopName}}</text>
+		</view>
+		<view class="pickerright">
+			<picker bindchange="bindPickerChange" value="{{index}}" range="{{shopNameinfo}}">
+				<image class='select_imgdown' src="../../img/downarrow.png"></image>
+			</picker>
+		</view>
+
+	</view>
+</view>
+<!-- 有海报信息 -->
+<view class="posterlayout" wx:if="{{!shownoposter}}">
+	<view bindtap="goWheel" data-index="{{index}}" class="imgBox" wx:for="{{posterImgInfo}}" wx:key="key">
+		<image class="posterStyle" src="{{item.thumb}}"></image>
+		<text>{{item.shop_name}}</text>
+	</view>
+</view>
+<!-- 无海报信息 -->
+<view wx:if="{{shownoposter}}">
+	<image class="shownoposter" src="../../img/shownoposter.png"></image>
+	<text class="makePoster">{{posterExplain}}</text>
+</view>
